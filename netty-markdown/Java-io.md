@@ -29,7 +29,7 @@ Java NIO 的非阻塞模式，使一个线程从某个通道发送请求或者�
 
 # 三、NIO三大核心原理示意图
 
-![nio-core](/Users/yanjunshen/Desktop/netty/nio-core.jpg)	
+![nio-core](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/nio-core.jpg)	
 
 
 
@@ -46,7 +46,7 @@ Java NIO 的非阻塞模式，使一个线程从某个通道发送请求或者�
 
 本质上是一个可以读写书的内存块，可以理解成是一个容器对象（含数组），该对象提供了一组方法，可以更轻松的使用内存块，缓冲区对象内置了一些机制，能够跟踪和记录缓冲区的状态变化情况。Channel提供从文件、网络读取数据的通道，但是读取和写入的数据都必须经过Buffer,如果
 
-![buffer](/Users/yanjunshen/Desktop/netty/buffer.jpg)
+![buffer](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/buffer.jpg)
 
 ## 3.2 通道(Channel)
 
@@ -56,7 +56,7 @@ NIO的通道类似于流，但有些区别如下：
 * 通道可以实现异步读写数据
 * 通道可以从缓冲读数据，也可以写数据到缓冲
 
-![channel-buffer](/Users/yanjunshen/Desktop/netty/channel-buffer.jpg)
+![channel-buffer](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/channel-buffer.jpg)
 
 BIO中的Stream是单向的，例如FileInputStream对象只能进行行读取数据的操作，而NIO中的通道(Channel)是双向的，可以进行读写操作。
 
@@ -70,7 +70,7 @@ NIO还提供了MappedByteBuffer,可以让文件直接在内存（堆外内存）
 * Selector能够检测多个注册的通道上是否有事件发生，如果有事件发生，变获取事件然后对每个事件进行相应的处理，这样就可以用一个单线程去管理多个通道，也就是管理多个连接和请求。
 * 只有在连接真正有读写事件发生时，才会进行读写，就大大减少了系统的开销，并且不必为每个连接都创建一个线程，不用去维护多个线程，避免了多线程之间的上下文切换
 
-![selector](/Users/yanjunshen/Desktop/netty/selector.jpg)
+![selector](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/selector.jpg)
 
 selector 相关方法
 
@@ -85,7 +85,7 @@ NIO非阻塞网络编程原理分析图
 
 selector,selectionKey,serverSocketChannel,SocketChannel
 
-![selector2](/Users/yanjunshen/Desktop/netty/selector2.jpg)
+![selector2](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/selector2.jpg)
 
 
 
