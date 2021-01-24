@@ -9,11 +9,11 @@
 
 ## 2、Netty说明
 
-![netty-framework](./netty-framework.jpg)
+![netty-framework](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/netty-framework.jpg)
 
 ## 3、线程模型基本介绍
 
-![线程模型1](/Users/yanjunshen/Desktop/netty/线程模型1.jpg)
+![线程模型1](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/线程模型1.jpg)
 
 * 传统阻塞IO服务模型
 
@@ -27,11 +27,11 @@
 
   一般称为反应器模式、分发者模式（dispatcher)、通知者模式(notifier)
 
-![reactor模型](/Users/yanjunshen/Desktop/netty/reactor模型.jpg)
+![reactor模型](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/reactor模型.jpg)
 
 
 
-![reactor模型2](/Users/yanjunshen/Desktop/netty/reactor模型2.jpg)
+![reactor模型2](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/reactor模型2.jpg)
 
 
 
@@ -50,18 +50,18 @@ Reactor模式分类
 
 
 
-![单Reactor单线程](/Users/yanjunshen/Desktop/netty/单Reactor单线程.jpg)
+![单Reactor单线程](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/单Reactor单线程.jpg)
 
 
 
-![单ractor多线程](/Users/yanjunshen/Desktop/netty/单ractor多线程.jpg)
+![单ractor多线程](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/单ractor多线程.jpg)
 
 
 
-![主从reactor多线程模型](/Users/yanjunshen/Desktop/netty/主从reactor多线程模型.jpg)
+![主从reactor多线程模型](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/主从reactor多线程模型.jpg)
 
 
 
 ## 4、netty模型
 
-![netty模型](/Users/yanjunshen/Desktop/netty/netty模型.jpg)
+![netty模型](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/netty模型.jpg)
