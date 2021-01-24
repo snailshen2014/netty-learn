@@ -27,7 +27,7 @@ while((n = read(diskfd, buf, BUF_SIZE)) > 0)
 接下来，`write`系统调用再把用户缓冲区的内容拷贝到网络堆栈相关的内核缓冲区中，最后`socket`再把内核缓冲区的内容发送到网卡上。
 说了这么多，不如看图清楚：
 
-![dma](/Users/yanjunshen/Desktop/netty/dma.jpg)
+![dma](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/dma.jpg)
 
 
 
@@ -58,7 +58,7 @@ write(sockfd, buf, len);
 
 
 
-![mmap](/Users/yanjunshen/Desktop/netty/mmap.jpg)
+![mmap](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/mmap.jpg)
 
 
 
@@ -102,7 +102,7 @@ ssize_t sendfile(int out_fd, int in_fd, off_t *offset, size_t count);
 系统调用`sendfile()`在代表输入文件的描述符`in_fd`和代表输出文件的描述符`out_fd`之间传送文件内容（字节）。描述符`out_fd`必须指向一个套接字，而`in_fd`指向的文件必须是可`mmap`的。这些局限限制了`sendfile`的使用，使`sendfile`只能将数据从文件传递到套接字上，反之则不行。
 使用`sendfile`不仅减少了数据拷贝的次数，还减少了上下文切换，数据传送始终只发生在`kernel space`。
 
-![sendfile1](/Users/yanjunshen/Desktop/netty/sendfile1.jpg)
+![sendfile1](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/sendfile1.jpg)
 
 sendfile系统调用过程
 
@@ -114,7 +114,7 @@ sendfile系统调用过程
 
 总结一下，`sendfile`系统调用利用`DMA`引擎将文件内容拷贝到内核缓冲区去，然后将带有文件位置和长度信息的缓冲区描述符添加socket缓冲区去，这一步不会将内核中的数据拷贝到socket缓冲区中，`DMA`引擎会将内核缓冲区的数据拷贝到协议引擎中去，避免了最后一次拷贝。
 
-![sendfile2](/Users/yanjunshen/Desktop/netty/sendfile2.jpg)
+![sendfile2](https://github.com/snailshen2014/netty-learn/blob/main/netty-markdown/sendfile2.jpg)
 
 
 
